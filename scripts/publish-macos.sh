@@ -76,7 +76,7 @@ verify_assets() {
 }
 verify_assets
 if jq -e '.isDraft' hosted.json >/dev/null; then
-  gh release edit "$tag" -R "$repo" --draft=false --latest=false
+  gh release edit "$tag" -R "$repo" --draft=false --latest=false --notes-file notes.md
 fi
 verify_assets
 jq -e '.isDraft == false' hosted.json >/dev/null
