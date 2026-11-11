@@ -19,7 +19,7 @@ tag="v$version"
 sha256() { sha256sum < "$1" | awk '{print $1}'; }
 file_size() { wc -c < "$1" | tr -d '[:space:]'; }
 
-gcloud storage cp --quiet "$prefix/manifest.json" manifest.json
+gcloud storage cat "$prefix/manifest.json" > manifest.json
 [[ "$(sha256 manifest.json)" = "$manifest_hash" ]]
 jq -e --arg version "$version" --arg run "$run_id" --arg attempt "$attempt" \
   --arg base "$base" '
@@ -35,7 +35,7 @@ jq -e --arg version "$version" --arg run "$run_id" --arg attempt "$attempt" \
 
 for kind in dmg zip; do
   file="$base.$kind"
-  gcloud storage cp --quiet "$prefix/$file" "$file"
+  gcloud storage cat "$prefix/$file" > "$file"
   [[ "$(sha256 "$file")" = "$(jq -r --arg kind "$kind" '.artifacts[$kind].sha256' manifest.json)" ]]
   [[ "$(file_size "$file")" = "$(jq -r --arg kind "$kind" '.artifacts[$kind].bytes' manifest.json)" ]]
 done
