@@ -1,4 +1,4 @@
-<img src="assets/qktrx-logo.png" alt="qktrx logo" width="480">
+<p><img src="assets/qktrx-logo.png" alt="qktrx logo" width="320"> <a href="https://13duckrace.com/"><img src="assets/13-duck-race-icon.png" alt="13 Duck Race app icon" width="80"></a></p>
 
 # qktrx
 
