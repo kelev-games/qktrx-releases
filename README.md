@@ -2,7 +2,7 @@
 
 # qktrx releases
 
-qktrx (pronounced "quack tracks") is the level editor for 13 Duck Race.
+qktrx (pronounced "quack tracks") is the level editor for [13 Duck Race](https://13duckrace.com/).
 This repository publishes the desktop editor and its optional CLI and MCP
 companion.
 
