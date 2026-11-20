@@ -1,53 +1,60 @@
-# Install the qktrx CLI and MCP companion
+# Use qktrx with Codex or the terminal
 
-Companion 0.1.5 works with qktrx editor 0.1.2. Run the companion on the machine
-that runs the editor for automatic local pairing. Keep a level open to see it
-in the session list. Ubuntu testers can install or update the editor through
-the [restricted APT channel](ubuntu.md).
+The companion lets an AI assistant see and work with a course you have open
+in qktrx. It also adds a terminal command, `qktrx-agent`, for people who
+prefer to work that way. If you just want to make and playtest courses, you
+can use [the editor](../README.md) on its own.
 
-## Download and verify
+## Get set up
 
-1. [Install Bun](https://bun.com/docs/installation) and run `bun --version`.
-   The companion was tested with Bun 1.3.10.
-2. Download the archive and `SHA256SUMS` to the same folder.
-   [Companion 0.1.5 release](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5)
-3. From that folder, verify and extract the archive.
+You’ll need qktrx **0.1.2**, a Mac or Ubuntu computer, and a small program
+called **Bun** that runs the companion. Bun 1.3.10 is the version we tested.
 
-   ```sh
-   # macOS
-   shasum -a 256 -c SHA256SUMS
+1. [Install Bun](https://bun.com/docs/installation).
+2. [Download the companion](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.5/qktrx-companion-0.1.5-macos-linux.tar.gz)
+   and extract it to a folder you can keep.
+3. Open qktrx on the same computer and open a course.
 
-   # Ubuntu
-   sha256sum -c SHA256SUMS
-   ```
+## Add the companion to Codex
 
-   After you see `OK`, extract the bundle to a directory you can keep and try
-   the CLI.
+In Terminal, go to the folder you extracted, the one that contains
+`qktrx-agent`. Run these two commands.
 
-   ```sh
-   mkdir -p qktrx-companion
-   tar -xzf qktrx-companion-0.1.5-macos-linux.tar.gz -C qktrx-companion
-   cd qktrx-companion
-   ./qktrx-agent --help
-   ```
+```sh
+codex plugin marketplace add "$PWD"
+codex plugin add qktrx@qktrx-codex
+```
 
-Keep `qktrx-agent` and `agent.js` together. You can add their directory to
-your `PATH` for CLI use. The launcher checks `~/.bun/bin/bun` and then
-`PATH`. Set `QKTRX_BUN` to an absolute executable path to use a custom Bun
-installation.
+Start a new Codex session and ask **“Which course do I have open in qktrx?”**
+If Codex can’t connect, check the connection help below.
 
-## Connect to the editor
+## Use the terminal command
 
-Start qktrx under the same user account and try:
+This command lists your open courses. Run it from the extracted folder.
 
 ```sh
 ./qktrx-agent sessions
 ```
 
-The default origin is `http://127.0.0.1:4190`. If the editor uses another
-port, pass its origin with `--app-url` or choose its pairing file with
-`--connection`. The following command prints the origins and paths from the
-default pairing directory while keeping credential contents private:
+Run `./qktrx-agent --help` to see more commands. Keep `qktrx-agent` and
+`agent.js` together if you move the folder.
+
+## If it can’t connect
+
+- **Bun is missing.** Try `bun --version` in Terminal. If you installed Bun
+  in a custom location, set `QKTRX_BUN` to the full path of the Bun executable
+  before starting Codex or running `qktrx-agent`.
+- **The list is empty.** Open a course in qktrx and try again.
+- **The tool says `NOT_PAIRED` or can’t reach the editor.** Start qktrx under
+  the same user account as Codex. If qktrx is already running, it may use a
+  different local address. See the steps below.
+
+<details>
+<summary>Find and select the editor's local address</summary>
+
+The companion tries `http://127.0.0.1:4190` by default. To list saved editor
+addresses and the paths to their private connection files, run the following
+command.
 
 ```sh
 bun -e '
@@ -61,61 +68,61 @@ bun -e '
 '
 ```
 
-If several entries are present, choose the one for the running editor. Old
-entries can point to editors that are no longer running. For an editor using
-a custom profile, use its private pairing file directly:
+If several entries appear, try the file for the running editor. For a custom
+qktrx profile, use the private connection file for that profile.
 
 ```sh
 ./qktrx-agent --connection "/absolute/path/to/pairing-file.json" sessions
 ```
 
-Use the returned session ID with `./qktrx-agent context SESSION_ID`.
-A successful response with an empty list means the editor has no registered
-level tab. Open a level and retry.
-
-## Install in Codex
-
-From the extracted `qktrx-companion` directory:
+Once that works, use the same file to start Codex.
 
 ```sh
-codex plugin marketplace add "$PWD"
-codex plugin add qktrx@qktrx-codex
+QKTRX_AGENT_CONNECTION="/absolute/path/to/pairing-file.json" codex
 ```
 
-Start a new Codex session and call the qktrx `list_sessions` tool. For a
-nondefault origin, pass the origin to the process that starts Codex. For
-example, if the editor is listening on port 4250:
+If you already know the editor’s local address, you can pass it instead.
+Replace the example port with yours.
 
 ```sh
 QKTRX_APP_URL=http://127.0.0.1:4250 codex
 ```
 
-You can also launch Codex with
-`QKTRX_AGENT_CONNECTION=/absolute/path/to/pairing-file.json` to select the
-exact profile. Codex forwards these variables and `QKTRX_BUN` to the plugin.
-When using a graphical launcher, settings must be available to the launched
-process. A terminal-only export applies to Codex started from that terminal.
+</details>
 
-If the server fails to start, verify Bun is installed in `~/.bun/bin`,
-available to the host on `PATH`, or set with `QKTRX_BUN`. If the tool
-reports `NOT_PAIRED`, check the running editor's origin and pairing file
-with the CLI first.
+<details>
+<summary>Use the companion with Claude Code</summary>
 
-## Claude Code
-
-For a local Claude Code session, the archive includes a plugin at
-`plugins/claude-code`:
+Run this command from the extracted folder to start Claude Code.
 
 ```sh
 claude --plugin-dir "$PWD/plugins/claude-code"
 ```
 
-Its launcher passed MCP protocol tests. Installation in the Claude Code host
-remains unverified.
+The plugin’s connection launcher passed testing. The full Claude Code
+installation flow is still unverified.
 
-## Verification and licenses
+</details>
 
-Codex plugin installation and a read-only MCP call passed on macOS Apple
-silicon against qktrx 0.1.2. On Ubuntu x64, the CLI and Codex plugin passed
-startup and an authenticated MCP call against a local test endpoint. Third-party
-license texts are included in `licenses/` in the archive and in each plugin.
+<details>
+<summary>Check your download and see what was tested</summary>
+
+Download `SHA256SUMS` from the release page to the same folder as the archive.
+Run the command for your computer and look for `OK`.
+
+```sh
+# Mac
+shasum -a 256 -c SHA256SUMS
+
+# Ubuntu
+sha256sum -c SHA256SUMS
+```
+
+We tested Codex installation and a tool call against a running qktrx editor on
+an Apple silicon Mac. On Ubuntu x64, we tested the terminal command, Codex
+installation, and a tool call against a test service. Third-party licenses are
+in the archive’s `licenses/` folder and in each plugin folder.
+
+[Companion 0.1.5 release notes and downloads](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5)
+
+</details>

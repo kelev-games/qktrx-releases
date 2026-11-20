@@ -1,32 +1,37 @@
 <img src="assets/qktrx-logo.png" alt="qktrx logo" width="480">
 
-# qktrx releases
+# qktrx
 
-qktrx (pronounced "quack tracks") is the level editor for [13 Duck Race](https://13duckrace.com/).
-This repository publishes the desktop editor and its optional CLI and MCP
-companion.
+qktrx (pronounced "quack tracks") is the course editor for
+[13 Duck Race](https://13duckrace.com/). Build your own race course, try it out,
+and tweak it until it plays the way you want.
 
-| Download | Version | Setup |
-| --- | --- | --- |
-| [Desktop editor for Apple silicon Macs](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg) | 0.1.2 beta | [Editor release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2) |
-| Desktop editor for Ubuntu 24.04 (amd64) | 0.1.2 restricted APT | [APT setup and Snap Store status](docs/ubuntu.md) |
-| [CLI and MCP companion for macOS and Linux](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.5/qktrx-companion-0.1.5-macos-linux.tar.gz) | 0.1.5 prerelease | [Install and connect the companion](docs/companion.md) · [Companion release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5) |
+## Get the editor
 
-The companion connects to a running qktrx 0.1.2 editor. Install Bun separately
-(Bun 1.3.10 was tested). The archive includes `qktrx-agent`, plugins for Codex
-and Claude Code, and third-party license notices. The Ubuntu desktop beta is
-available through the signed APT feed for approved testers. The Snap Store
-release is pending.
+### Mac
 
-### CI publication for macOS
+[**Download qktrx for Mac**](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg)
 
-Dispatch **Publish QA-approved macOS candidate** on `main` after native QA.
-Use the version, source run, archive attempt, and exact manifest SHA-256 from the
-private archive job summary. Include the successful QA run link and
-user-facing release notes. The environment reviewer checks that QA covered
-that exact manifest before approving publication.
+This beta is for Macs with an Apple M-series chip. To check yours, open the Apple
+menu and choose **About This Mac**.
 
-The runner downloads the signed installer, updater ZIP, and manifest directly
-from private Cloud Storage. It verifies them, uploads to a draft, checks the
-hosted asset digests, and publishes the draft. Feed promotion is a separate
-operation. The workflow can resume its own draft for the same manifest.
+1. Open the downloaded file.
+2. Drag **qktrx** into **Applications**.
+3. Open **qktrx** from Applications and choose a course to start editing.
+
+[What's in the Mac beta](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2)
+
+### Ubuntu
+
+The Ubuntu 24.04 beta is available to approved testers on 64-bit Intel and AMD
+computers. Ask the qktrx team for access if you’re testing with us. A public Snap
+Store download is still pending.
+
+[Install or update on Ubuntu](docs/ubuntu.md)
+
+## Use qktrx with an AI assistant
+
+The optional companion lets tools like Codex connect to the editor and help
+inspect or edit a course. You can build and test courses in the editor on its own.
+
+[Set up the optional companion](docs/companion.md)
