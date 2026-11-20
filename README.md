@@ -21,6 +21,21 @@ menu and choose **About This Mac**.
 
 [What's in the Mac beta](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2)
 
+<details>
+<summary>Install with Homebrew</summary>
+
+If you already use Homebrew, run these commands in Terminal.
+
+```sh
+brew tap kelev-games/qktrx-releases https://github.com/kelev-games/qktrx-releases
+brew install --cask kelev-games/qktrx-releases/qktrx
+```
+
+Then open **qktrx** from Applications. You can update it from the qktrx menu
+with **Check for Updates**.
+
+</details>
+
 ### Ubuntu
 
 The Ubuntu 24.04 beta is available to approved testers on 64-bit Intel and AMD
