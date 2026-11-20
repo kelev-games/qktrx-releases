@@ -1,9 +1,16 @@
-# qktrx-releases
-Public downloads and release notes for qktrx.
+# Quack Tracks releases
 
-[Download qktrx 0.1.2 for Apple silicon Macs](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg)
+Quack Tracks (qktrx) is the level editor for 13 Duck Race. This repository
+publishes the desktop editor and its optional CLI and MCP companion.
 
-[Release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2)
+| Download | Version | Setup |
+| --- | --- | --- |
+| [Desktop editor for Apple silicon Macs](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg) | 0.1.2 beta | [Editor release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2) |
+| [CLI and MCP companion for macOS and Linux](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.5/qktrx-companion-0.1.5-macos-linux.tar.gz) | 0.1.5 prerelease | [Install and connect the companion](docs/companion.md) · [Companion release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5) |
+
+The companion connects to a running qktrx 0.1.2 editor. Install Bun separately
+(Bun 1.3.10 was tested). The archive includes `qktrx-agent`, plugins for Codex
+and Claude Code, and third-party license notices.
 
 ### CI publication for macOS
 
