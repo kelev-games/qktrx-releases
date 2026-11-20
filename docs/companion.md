@@ -2,7 +2,8 @@
 
 Companion 0.1.5 works with qktrx editor 0.1.2. Run the companion on the machine
 that runs the editor for automatic local pairing. Keep a level open to see it
-in the session list.
+in the session list. Ubuntu testers can install or update the editor through
+the [restricted APT channel](ubuntu.md).
 
 ## Download and verify
 

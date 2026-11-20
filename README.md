@@ -6,11 +6,14 @@ publishes the desktop editor and its optional CLI and MCP companion.
 | Download | Version | Setup |
 | --- | --- | --- |
 | [Desktop editor for Apple silicon Macs](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg) | 0.1.2 beta | [Editor release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2) |
+| Desktop editor for Ubuntu 24.04 (amd64) | 0.1.2 restricted APT | [APT setup and Snap Store status](docs/ubuntu.md) |
 | [CLI and MCP companion for macOS and Linux](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.5/qktrx-companion-0.1.5-macos-linux.tar.gz) | 0.1.5 prerelease | [Install and connect the companion](docs/companion.md) · [Companion release notes and checksums](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5) |
 
 The companion connects to a running qktrx 0.1.2 editor. Install Bun separately
 (Bun 1.3.10 was tested). The archive includes `qktrx-agent`, plugins for Codex
-and Claude Code, and third-party license notices.
+and Claude Code, and third-party license notices. The Ubuntu desktop beta is
+available through the signed APT feed for approved testers. The Snap Store
+release is pending.
 
 ### CI publication for macOS
 
