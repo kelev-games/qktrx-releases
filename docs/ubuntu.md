@@ -1,4 +1,4 @@
-# Quack Tracks on Ubuntu
+# qktrx on Ubuntu
 
 The qktrx 0.1.2 desktop beta is available for **Ubuntu 24.04 (amd64)** through
 Kelev Games’ signed APT repository. Access is restricted to approved testers.
