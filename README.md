@@ -1,3 +1,5 @@
+<img src="assets/qktrx-logo.png" alt="qktrx logo" width="480">
+
 # Quack Tracks releases
 
 Quack Tracks (qktrx) is the level editor for 13 Duck Race. This repository
