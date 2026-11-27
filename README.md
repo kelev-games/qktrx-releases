@@ -10,7 +10,7 @@ and tweak it until it plays the way you want.
 
 ### Mac
 
-[**Download qktrx for Mac**](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.2/qktrx-0.1.2-darwin-arm64.dmg)
+[**Download qktrx for Mac**](https://github.com/kelev-games/qktrx-releases/releases/download/v0.1.3/qktrx-0.1.3-darwin-arm64.dmg)
 
 This beta is for Macs with an Apple M-series chip. To check yours, open the Apple
 menu and choose **About This Mac**.
@@ -19,7 +19,7 @@ menu and choose **About This Mac**.
 2. Drag **qktrx** into **Applications**.
 3. Open **qktrx** from Applications and choose a course to start editing.
 
-[What's in the Mac beta](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.2)
+[What's in the Mac beta](https://github.com/kelev-games/qktrx-releases/releases/tag/v0.1.3)
 
 <details>
 <summary>Install with Homebrew</summary>
