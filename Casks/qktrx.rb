@@ -1,6 +1,6 @@
 cask "qktrx" do
-  version "0.1.2"
-  sha256 "147b3c4728a1375c8d8aa7e6a4f1c91b89bf67af5546b9ba3be372e5c2d505cd"
+  version "0.1.3"
+  sha256 "35069b09c222ee923236434978161a14dc0efeb9068d0214121e26359a84bffe"
 
   url "https://github.com/kelev-games/qktrx-releases/releases/download/v#{version}/qktrx-#{version}-darwin-arm64.dmg"
   name "qktrx"
