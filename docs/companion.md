@@ -7,11 +7,12 @@ can use [the editor](../README.md) on its own.
 
 ## Get set up
 
-You’ll need qktrx **0.1.2**, a Mac or Ubuntu computer, and a small program
-called **Bun** that runs the companion. Bun 1.3.10 is the version we tested.
+Use companion **0.1.6** with qktrx **0.1.3** on a Mac or Ubuntu computer.
+If your editor is still on **0.1.2**, use [companion 0.1.5](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5).
+Both versions use Bun 1.3.10.
 
 1. [Install Bun](https://bun.com/docs/installation).
-2. [Download the companion](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.5/qktrx-companion-0.1.5-macos-linux.tar.gz)
+2. [Download the companion](https://github.com/kelev-games/qktrx-releases/releases/download/companion-v0.1.6/qktrx-companion-0.1.6-macos-linux.tar.gz)
    and extract it to a folder you can keep.
 3. Open qktrx on the same computer and open a course.
 
@@ -118,11 +119,11 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 ```
 
-We tested Codex installation and a tool call against a running qktrx editor on
-an Apple silicon Mac. On Ubuntu x64, we tested the terminal command, Codex
-installation, and a tool call against a test service. Third-party licenses are
+For companion 0.1.6, we tested the CLI and both plugin launchers on an
+Apple silicon Mac and Ubuntu 24.04 x64. On the Mac, we also listed an open
+editor session through MCP. Third-party licenses are
 in the archive’s `licenses/` folder and in each plugin folder.
 
-[Companion 0.1.5 release notes and downloads](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.5)
+[Companion 0.1.6 release notes and downloads](https://github.com/kelev-games/qktrx-releases/releases/tag/companion-v0.1.6)
 
 </details>
