@@ -12,6 +12,14 @@ setup instructions. The team will help you connect Ubuntu’s package manager
 
 ## Installing or updating
 
+For the 0.1.3 beta, a host operator needs to install the updated qktrx
+archive keyring. If APT reports a missing public key, ask the operator to
+refresh the keyring using the team’s verified setup instructions.
+
+Before updating from 0.1.2, back up maps that use the retired Gate exit
+section and remove that section in 0.1.2. In 0.1.3, place a Taper facing
+the desired direction.
+
 After the tester channel is set up, open **Terminal** and run these two
 commands. The first refreshes Ubuntu’s list of available apps. The second
 installs qktrx or updates your existing copy.
@@ -22,7 +30,7 @@ sudo apt-get install qktrx
 ```
 
 When it finishes, open **qktrx** from your apps menu. The current beta is
-**0.1.2**.
+**0.1.3**.
 
 If Ubuntu says it can’t find qktrx, check with your qktrx contact that the
 tester channel is set up. If it says **401 Unauthorized**, ask them to check
